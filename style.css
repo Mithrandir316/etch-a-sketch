@@ -1,0 +1,39 @@
+body{
+    display: block;
+}
+
+.container{
+    width: 500px;
+    height: 500px;
+    border: 1px solid black;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    flex: 1 auto;
+}
+
+.sub-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex: 1 auto;
+    
+}
+
+.grid-div{
+    flex: 1 auto;
+}
+
+.buttons{
+    display: flex;
+    justify-content: center;
+    width: 500px;
+    margin: 0 auto;
+}
+
+button{
+    margin: 20px auto;
+    padding: 10px;
+    width: 100px;
+}
