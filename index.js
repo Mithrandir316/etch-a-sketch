@@ -2,11 +2,13 @@ let divContainer = document.querySelector(".container");
 let randomColorBtn = document.querySelector("#random-color-btn");
 let darkEffectBtn = document.querySelector("#dark-effect-btn");
 let gridButton = document.querySelector("#grid-size-btn");
+let resetBtn = document.querySelector("#reset-btn");
 let rgbMode = false;
 let darkMode = false;
 let opacity = 0.1;
+let size = 16;
 
-createGrid(16);
+
 
 function createGrid(size) {
   for (let i = 0; i < size; i++) {
@@ -41,6 +43,13 @@ function getRandomColor() {
   return `rgb(${colorRed}, ${colorGreen}, ${colorBlue})`;
 }
 
+function reset() {
+  while (divContainer.firstChild) {
+    divContainer.removeChild(divContainer.lastChild);
+  }
+  createGrid(size);
+}
+
 gridButton.addEventListener("click", () => {
   let message = +prompt("Tell me size of the grid. It might be from 1 to 100");
   divContainer.textContent = "";
@@ -72,6 +81,13 @@ darkEffectBtn.addEventListener("click", () => {
     darkEffectBtn.textContent = "Dark Effect OFF";
   }
 });
+
+resetBtn.addEventListener("click", () => {
+  darkEffectBtn.textContent = "Dark Effect OFF";
+  randomColorBtn.textContent = "Rainbow Mode OFF";
+  reset();
+})
+
 
 
 
